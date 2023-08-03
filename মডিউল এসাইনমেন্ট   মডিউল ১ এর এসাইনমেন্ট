@@ -1,0 +1,31 @@
+
+void main(){
+  int a = 7;
+  int b = 3;
+  
+  // Addition Start here
+  int addResults = a + b;
+  print(addResults);
+  // Addition end
+  
+  // Subtraction Start here
+  int subResults = a - b;
+  print(subResults);
+  // Subtraction end
+  
+  // Multiplication Start here
+  int multiResults = a * b;
+  print(multiResults);
+  // Multiplication end
+  
+  // Division Start here
+  double divResults = a / b;
+  print(divResults);
+  // Division end
+  
+  // Modulus Start here
+  int modResults = a % b;
+  print(modResults);
+  // Modulus end
+  
+}
