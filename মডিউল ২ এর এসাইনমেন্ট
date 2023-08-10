@@ -1,15 +1,14 @@
 void main() {
   List<int> numbers = [85, 92, 78, 65, 88, 72];
-  
-  int totalNumber = 0;
-  
-  for (int number in numbers) {
-    totalNumber += number; 
-  }
-  
+
+  int totalNumbers = 0;
   int totalSub = numbers.length;
-  
-  double avarageNumbers = totalNumber/totalSub;
+
+  for (int number in numbers) {
+    totalNumbers += number; 
+  }
+
+  double avarageNumbers = totalNumbers/totalSub;
   int roundAvarage = avarageNumbers.round();
   
   results(){
