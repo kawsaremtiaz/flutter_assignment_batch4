@@ -1,0 +1,23 @@
+void main() {
+  List<int> numbers = [85, 92, 78, 65, 88, 72];
+  
+  int totalNumber = 0;
+  for (int number in numbers) {
+    totalNumber += number; 
+  }
+  
+  int totalSub = numbers.length;
+  double avarageNumbers = totalNumber/totalSub;
+  int roundAvarage = avarageNumbers.round();
+  
+  print("Student avarage numbers grade: $avarageNumbers");
+  print("Student Rounded average: $roundAvarage");
+  
+  if(avarageNumbers >= 70){
+    print("Passed");
+  }
+  else{
+    print("Failed");
+  }
+   
+}
