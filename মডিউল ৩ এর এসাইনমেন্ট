@@ -1,0 +1,63 @@
+class Car {
+  String brand;
+  String model;
+  int year;
+  double milesDriven;
+
+  Car(this.brand, this.model, this.year, this.milesDriven);
+
+  void drive(double miles) {
+    milesDriven += miles;
+  }
+
+  double getMilesDriven() {
+    return milesDriven;
+  }
+
+  String getBrand() {
+    return brand;
+  }
+
+  String getModel() {
+    return model;
+  }
+
+  int getYear() {
+    return year;
+  }
+
+  int getAge() {
+    int currentYear = DateTime.now().year;
+    return currentYear - year;
+  }
+
+  static int numberOfCars = 0;
+}
+
+void main() {
+  Car.numberOfCars = 0;
+
+  Car car1 = Car("Toyota", "Camry", 2019, 15000);
+  car1.drive(500);
+
+  Car car2 = Car("Honda", "Civic", 2020, 10000);
+  car2.drive(800);
+
+  Car car3 = Car("Ford", "Mustang", 2018, 20000);
+  car3.drive(300);
+
+  Car.numberOfCars = 3;
+
+  List<Car> cars = [car1, car2, car3];
+
+  for (var car in cars) {
+    print("Brand: ${car.getBrand()}");
+    print("Model: ${car.getModel()}");
+    print("Year: ${car.getYear()}");
+    print("Miles Driven: ${car.getMilesDriven()}");
+    print("Age: ${car.getAge()} years");
+    print("-------------------------");
+  }
+
+  print("Total numberOfCars: ${Car.numberOfCars}");
+}
