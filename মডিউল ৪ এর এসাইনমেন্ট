@@ -1,0 +1,68 @@
+abstract class Account {
+  int accountNumber;
+  double balance;
+
+  Account(this.accountNumber, this.balance);
+
+  void deposit(double amount) {
+    if (amount > 0) {
+      balance += amount;
+      print('Deposited: \$$amount');
+    }
+  }
+
+  void withdraw(double amount);
+}
+
+class SavingsAccount extends Account {
+  double interestRate;
+
+  SavingsAccount(int accountNumber, double balance, this.interestRate)
+      : super(accountNumber, balance);
+
+  @override
+  void withdraw(double amount) {
+    if (amount > 0) {
+      if (amount <= balance) {
+        balance -= amount;
+        balance += balance * interestRate;
+        print('Withdrawn: \$$amount');
+      } else {
+        print('Insufficient funds');
+      }
+    }
+  }
+}
+
+class CurrentAccount extends Account {
+  double overdraftLimit;
+
+  CurrentAccount(int accountNumber, double balance, this.overdraftLimit)
+      : super(accountNumber, balance);
+
+  @override
+  void withdraw(double amount) {
+    if (amount > 0) {
+      if (amount <= balance + overdraftLimit) {
+        balance -= amount;
+        print('Withdrawn: \$$amount');
+      } else {
+        print('Insufficient funds');
+      }
+    }
+  }
+}
+
+void main() {
+  // Creating a SavingsAccount instance
+  var savings = SavingsAccount(12345, 1000.0, 0.05);
+  savings.deposit(500.0);
+  savings.withdraw(200.0);
+  print('Savings Account Balance: \$${savings.balance.toStringAsFixed(2)}');
+
+  // Creating a CurrentAccount instance
+  var current = CurrentAccount(67890, 2000.0, 0.0);
+  current.deposit(1000.0);
+  current.withdraw(760.0);
+  print('Current Account Balance: \$${current.balance.toStringAsFixed(2)}');
+}
