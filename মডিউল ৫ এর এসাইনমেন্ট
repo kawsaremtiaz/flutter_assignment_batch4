@@ -16,8 +16,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: true,
     );
   }
-
-
 }
 
 class HomeScreen extends StatelessWidget {
@@ -51,7 +49,6 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.deepOrange,
                         fontSize: 20,
-
                       ),
                       children: [
                         TextSpan(
@@ -72,17 +69,14 @@ class HomeScreen extends StatelessWidget {
                             text: "Your phone name",
                             style: TextStyle(
                               color: Colors.orange,
-
-                            )
+                           )
                         )
                       ]
                   )),
             )
-
           ],
         )
     );
   }
-
 }
 
